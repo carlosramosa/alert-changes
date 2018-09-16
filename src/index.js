@@ -1,13 +1,20 @@
 'use strict';
 
-const { capturaPantalla } = require('./captura-pantalla');
-const { base64_encode } = require('./conversor-base-64');
-const { comparar } = require ('./comparador');
-const { notificar } = require ('./notificador');
+const {
+    capturaPantalla
+    , base64_encode
+    , comparar
+    , notificar
+} = require('./manager');
+
+const {
+    TTL
+    , URL
+} = require ('./env');
 
 const fs = require ('fs');
 
-capturaPantalla('http://www.xvideos.com')
+capturaPantalla(URL)
     .then( path => {
         const b64 = base64_encode(path);
         const haCambiado = comparar(b64);

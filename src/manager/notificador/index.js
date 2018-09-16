@@ -3,6 +3,7 @@
 const nodemailer = require('nodemailer');
 const fs = require('fs');
 const handlebars = require('handlebars');
+const { recipient, emailMessage } = require ('../../env');
 
 const transporter = nodemailer.createTransport({
     service: 'gmail',
@@ -14,7 +15,7 @@ const transporter = nodemailer.createTransport({
 
 const mailOptions = base64 => {
     try {
-        const html = fs.readFileSync('./notificador/template/index.html', {encoding: 'utf-8'});
+        const html = fs.readFileSync('./src/manager/notificador/template/index.html', {encoding: 'utf-8'});
         const template = handlebars.compile(html);
         const replacements = {
             img: base64
@@ -23,8 +24,8 @@ const mailOptions = base64 => {
         // var template = fs.readFileSync('./template/index.html',{encoding:'utf-8'});
         return {
             from: 'notificacionesidealista@gmail.com', // sender address
-            to: 'carlosramos.cramos@gmail.com', // list of receivers
-            subject: 'Nuevos pisitos!!', // Subject line
+            to: recipient, // list of receivers
+            subject: emailMessage, // Subject line
             html:  htmlToSend
         }
     }

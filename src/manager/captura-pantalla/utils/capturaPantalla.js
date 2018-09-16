@@ -10,7 +10,7 @@ module.exports = async ( url ) => {
 
     await page.goto(url);
 
-    const path = `capturaa.png`;
+    const path = `captura.png`;
 
     await page.screenshot({path});
 
