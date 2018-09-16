@@ -12,6 +12,10 @@ const comparar = base64Nuevo => {
     }
     catch (err) {
         console.log(err);
+        const imagenAnterior = {
+            base64: base64Nuevo
+        };
+        fs.writeFileSync('anterior.json', JSON.stringify(imagenAnterior, null, 4));
         return null;
     }
 };

@@ -35,7 +35,7 @@ const execute = async () => {
             }
 
         });
-    setTimeout(pene, 15000);
+    setTimeout(execute, 15000);
 }
         
 

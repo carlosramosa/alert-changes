@@ -2,7 +2,7 @@
 
 const recipient = process.env.recipient || 'carlosramos.cramos@gmail.com';
 
-const TTL = process.env.TTL || 600000;
+const TTL = process.env.TTL || 15000;
 
 const URL = process.env.URL || 'http://www.xvideos.com';
 
