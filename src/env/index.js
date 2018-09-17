@@ -10,6 +10,7 @@ const PASS = process.env.PASS;
 
 const MESSAGE = process.env.emailMessage || 'Ha habido cambios!!';
 
+
 module.exports = {
     RECIPIENT
     , TTL
