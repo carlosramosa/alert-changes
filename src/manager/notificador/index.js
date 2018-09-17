@@ -23,7 +23,7 @@ const mailOptions = base64 => {
         const htmlToSend = template(replacements);
         // var template = fs.readFileSync('./template/index.html',{encoding:'utf-8'});
         return {
-            from: 'notificacionesidealista@gmail.com', // sender address
+            from: USER, // sender address
             to: RECIPIENT, // list of receivers
             subject: MESSAGE, // Subject line
             html:  htmlToSend
