@@ -16,7 +16,7 @@ const MESSAGE = process.env.emailMessage || 'Ha habido cambios!!';
 module.exports = {
     RECIPIENT
     , TTL
-    , URL
+    , URL 
     , MESSAGE
     , PASS
     , USER
