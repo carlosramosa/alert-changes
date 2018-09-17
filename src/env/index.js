@@ -1,17 +1,20 @@
 'use strict';
 
-const recipient = process.env.recipient || 'carlosramos.cramos@gmail.com';
-
 const TTL = process.env.TTL || 15000;
 
 const URL = process.env.URL || 'http://www.xvideos.com';
 
+const USER = process.env.USER;
 
-const emailMessage = process.env.emailMessage || 'Ha habido cambios!!';
+const PASS = process.env.PASS;
+
+const MESSAGE = process.env.emailMessage || 'Ha habido cambios!!';
 
 module.exports = {
-    recipient
+    RECIPIENT
     , TTL
     , URL
-    , emailMessage
+    , MESSAGE
+    , PASS
+    , USER
 };

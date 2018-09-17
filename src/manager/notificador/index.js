@@ -3,13 +3,13 @@
 const nodemailer = require('nodemailer');
 const fs = require('fs');
 const handlebars = require('handlebars');
-const { recipient, emailMessage } = require ('../../env');
+const { RECIPIENT, MESSAGE, USER, PASS } = require ('../../env');
 
 const transporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {
-        user: 'notificacionesidealista@gmail.com',
-        pass: 
+        user: USER,
+        pass: PASS
     }
 });
 
@@ -24,8 +24,8 @@ const mailOptions = base64 => {
         // var template = fs.readFileSync('./template/index.html',{encoding:'utf-8'});
         return {
             from: 'notificacionesidealista@gmail.com', // sender address
-            to: recipient, // list of receivers
-            subject: emailMessage, // Subject line
+            to: RECIPIENT, // list of receivers
+            subject: MESSAGE, // Subject line
             html:  htmlToSend
         }
     }
